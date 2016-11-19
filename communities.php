@@ -30,7 +30,6 @@ if($mysqli->connect_errno) {
           </tr>
         </thead>
 <?php
-/* Fills table with Characters Name, Level, Class, and Role */
 if(!($statement = $mysqli->prepare("SELECT `Name`,`State`, `Country`, `SkillNeeded`,`UserComments` FROM `Community` "))) {
   echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
@@ -40,7 +39,6 @@ if(!($statement->execute())) {
 if(!($statement->bind_result($name, $state, $country, $skill, $comment))) {
     echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
-/* Creates the chart with links, we will use the communites ID to populate the communites page */
 while ($statement->fetch()) {
   echo "\n<tr>\n<td>" . $name . "</td>\n<td>" . $state . "</td>\n<td>" . $country . "</td>\n<td>" . $skill . "</td>\n<td>" . $comment . "</td>\n</tr>";
 }
@@ -49,7 +47,20 @@ $statement->close();
       </table>
     </div>
 
-<!-- End of important stuff -->
+<div>
+  <form method="post" action="AddOpportunity.php">
+  
+    <fieldset>
+       <legend>Add Opportunity</legend>
+        <p>City: <input type="text" name="Name"/></p>
+        <p>State: <input type="text" name="State"/></p>
+        <p>Country: <input type="text" name="Country"/></p>
+        <p>Skill Needed: <input type="text" name="Skill"/></p>
+        <p>Comments: <input type="text" name="Comment"/></p>  
+        <p><input type="submit"/></p>
+    </fieldset>  
+  </form>
+</div>  
 
 
 
