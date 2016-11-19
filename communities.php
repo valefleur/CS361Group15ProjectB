@@ -60,7 +60,7 @@ $statement->close();
     </fieldset>  
   </form>
 </div>  
-<!-- End of important stuff -->
+
 
 
 
