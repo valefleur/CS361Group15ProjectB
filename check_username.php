@@ -8,7 +8,7 @@
 //  This page is used with an AJAX call on the newaccount.php.  It checks if the username being input already exists.
 
 // Change DB info
-$mysqli = new mysqli("db.com", "??_db", "password", "??_db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu", "bonneym-db", "R2lzWpqYli7k9Qk8", "bonneym-db");
 
 
 if(isset($_POST["username"])) {
