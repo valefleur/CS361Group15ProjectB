@@ -5,11 +5,11 @@ CREATE TABLE `Account`(
  `FirstName` varchar(255) NOT NULL,
  `LastName` varchar(255) NOT NULL,
  `Educator` int NOT NULL DEFAULT 0,
- check(`Educator` == 0 OR `Educator` == 1),
+ check(`Educator` = 0 OR `Educator` = 1),
  `Password` varchar(255) NOT NULL,
  /* Passwords can be 6-18 char long*/
  check(LEN(`Password`) >= 6 AND LEN(`Password`) <= 18),
- PRIMARY KEY (`Password`),
+ PRIMARY KEY (`AccountID`),
  UNIQUE KEY (`UserName`)
 ) ENGINE=InnoDB;
 
