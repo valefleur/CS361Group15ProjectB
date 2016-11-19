@@ -6,7 +6,7 @@ include 'storedInfo.php';
 // **** Let's come back and update the DB info here when we have it.
 // ****  There are 2 possible calls, depending on the db
 
-$mysqli = new mysqli("db.com", "??_db", "password", "??_db");
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu", "bonneym-db", "R2lzWpqYli7k9Qk8", "bonneym-db");
 // $mysqli = new mysqli("oniddb.cws.oregonstate.edu","??-db",$myPassword,"??-db");
 // if($mysqli->connect_errno){
 // 	echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
