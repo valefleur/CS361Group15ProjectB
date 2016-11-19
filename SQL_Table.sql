@@ -22,14 +22,15 @@ CREATE TABLE `Community` (
   `Country` varchar (255) NOT NULL,
   `SkillNeeded` varchar(255) NOT NULL,
   `UserComments` varchar(255),
-  PRIMARY KEY (`ProfessID`),
-  UNIQUE KEY (`Name`),
-  UNIQUE KEY (`SkillNeeded`)
+  PRIMARY KEY (`CommunityID`)      /*changed from professID to COmmunityID*/
+  /*UNIQUE KEY (`Name`),
+  UNIQUE KEY (`SkillNeeded`)*/
 ) ENGINE=InnoDB;
 
-/* Change these skills as you would like */
-INSERT INTO `Community` (`Name`, `State`, `Country`, `SkillNeeded`) VALUES
-("Blackwater", "Arizona", "United States", "Automotive Mechanic"),
-("Athens", "Ohio", "United States", "Locomotive Mechanic"),
-("Cité Soleil", NULL, "Haiti", "Aircraft Mechanic"),
-("Cidade de Deus", NULL, "Brazil", "Welding");
+
+INSERT INTO `Community` (`Name`, `State`, `Country`, `SkillNeeded`, `UserComments`) VALUES
+("Blackwater", "Arizona", "United States", "Automotive Mechanic", null),
+("Athens", "Ohio", "United States", "Locomotive Mechanic", null),
+("Cité Soleil", NULL, "Haiti", "Aircraft Mechanic", null),
+("Cidade de Deus", NULL, "Brazil", "Welding", null), ("Phoenix", "Arizona", 
+ "United States", "Roofer", "Bring your own tools");
