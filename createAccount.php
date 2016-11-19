@@ -7,7 +7,7 @@ include 'storedInfo.php';
 // Fall 2016
 
 //  Need to update the db info here too
-$connectDB = new mysqli("oniddb.cws.oregonstate.edu","??-db",$myPassword,"??-db") or die("Failed to connect to MySQL");
+$connectDB = new mysqli("oniddb.cws.oregonstate.edu", "bonneym-db", "R2lzWpqYli7k9Qk8", "bonneym-db") or die("Failed to connect to MySQL");
 
 $un = $_POST['username'];
 $pw = $_POST['password'];
