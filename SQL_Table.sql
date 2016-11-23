@@ -23,8 +23,7 @@ CREATE TABLE `Community` (
   `SkillNeeded` varchar(255) NOT NULL,
   `UserComments` varchar(255),
   PRIMARY KEY (`CommunityID`)      /*changed from professID to COmmunityID*/
-  /*UNIQUE KEY (`Name`),
-  UNIQUE KEY (`SkillNeeded`)*/
+  UNIQUE KEY (`Name`),
 ) ENGINE=InnoDB;
 
 
@@ -32,5 +31,15 @@ INSERT INTO `Community` (`Name`, `State`, `Country`, `SkillNeeded`, `UserComment
 ("Blackwater", "Arizona", "United States", "Automotive Mechanic", null),
 ("Athens", "Ohio", "United States", "Locomotive Mechanic", null),
 ("Cite Soleil", NULL, "Haiti", "Aircraft Mechanic", null),
-("Cidade de Deus", NULL, "Brazil", "Welding", null), ("Phoenix", "Arizona", 
- "United States", "Roofer", "Bring your own tools");
+("Cidade de Deus", NULL, "Brazil", "Welding", null), 
+("Phoenix", "Arizona", "United States", "Roofer", "Bring your own tools");
+ 
+ 
+DROP TABLE IF EXISTS `Account_Community`;
+CREATE TABLE `Account_Community` (
+  `AccountID` int(11) NOT NULL,
+  `CommunityID` int(11) NOT NULL,
+  PRIMARY KEY (`AccountID`, `CommunityID`),
+  FOREIGN KEY (`AccountID`) REFERENCES `Account` (`AccountID),
+  FOREIGN KEY (`CommunityID`) REFERENCES `Community` (`CommunityID`)
+) ENGINE=InnoDB;
