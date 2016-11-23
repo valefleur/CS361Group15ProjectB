@@ -31,6 +31,6 @@ CREATE TABLE `Community` (
 INSERT INTO `Community` (`Name`, `State`, `Country`, `SkillNeeded`, `UserComments`) VALUES
 ("Blackwater", "Arizona", "United States", "Automotive Mechanic", null),
 ("Athens", "Ohio", "United States", "Locomotive Mechanic", null),
-("Cité Soleil", NULL, "Haiti", "Aircraft Mechanic", null),
+("Cite Soleil", NULL, "Haiti", "Aircraft Mechanic", null),
 ("Cidade de Deus", NULL, "Brazil", "Welding", null), ("Phoenix", "Arizona", 
  "United States", "Roofer", "Bring your own tools");
