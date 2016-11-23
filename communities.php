@@ -30,7 +30,7 @@ if($mysqli->connect_errno) {
           </tr>
         </thead>
 <?php
-if(!($statement = $mysqli->prepare("SELECT `Name`,`State`, `Country`, `SkillNeeded`,`UserComments` FROM `Community` "))) {
+if(!($statement = $mysqli->prepare("SELECT `CommunityID`, `Name`, `State`, `Country`, `SkillNeeded`,`UserComments` FROM `Community` "))) {
   echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 if(!($statement->execute())) {
@@ -40,7 +40,7 @@ if(!($statement->bind_result($name, $state, $country, $skill, $comment))) {
     echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 while ($statement->fetch()) {
-  echo "\n<tr>\n<td>" . $name . "</td>\n<td>" . $state . "</td>\n<td>" . $country . "</td>\n<td>" . $skill . "</td>\n<td>" . $comment . "</td>\n</tr>";
+  echo "\n<tr>\n<td><a href='community.php?id=" . $charID . "'>" . $name . "</td>\n<td>" . $state . "</td>\n<td>" . $country . "</td>\n<td>" . $skill . "</td>\n<td>" . $comment . "</td>\n</tr>";
 }
 $statement->close();
  ?>
