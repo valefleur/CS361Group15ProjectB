@@ -22,8 +22,7 @@ CREATE TABLE `Community` (
   `Country` varchar (255) NOT NULL,
   `SkillNeeded` varchar(255) NOT NULL,
   `UserComments` varchar(255),
-  PRIMARY KEY (`CommunityID`)      /*changed from professID to COmmunityID*/
-  UNIQUE KEY (`Name`),
+  PRIMARY KEY (`CommunityID`),      /*changed from professID to COmmunityID*/
 ) ENGINE=InnoDB;
 
 
