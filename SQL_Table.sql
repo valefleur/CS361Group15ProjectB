@@ -39,6 +39,6 @@ CREATE TABLE `Account_Community` (
   `AccountID` int(11) NOT NULL,
   `CommunityID` int(11) NOT NULL,
   PRIMARY KEY (`AccountID`, `CommunityID`),
-  FOREIGN KEY (`AccountID`) REFERENCES `Account` (`AccountID),
+  FOREIGN KEY (`AccountID`) REFERENCES `Account` (`AccountID`),
   FOREIGN KEY (`CommunityID`) REFERENCES `Community` (`CommunityID`)
 ) ENGINE=InnoDB;
