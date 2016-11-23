@@ -109,7 +109,7 @@ while ($statement->fetch()) {
             <th>Comments</th>
           </tr>
         </thead>
-<?php>
+<?php
 /* Retrieves Community needs to display*/
 if(!($statement = $mysqli->prepare("SELECT `SkillNeeded`,`UserComments` FROM `Community` WHERE `CommunityID`= $idNum "))) {
   echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
