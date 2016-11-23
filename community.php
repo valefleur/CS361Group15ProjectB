@@ -6,7 +6,7 @@ if($mysqli->connect_errno) {
   echo "Connection Error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 /* Stores Community ID number*/
-$idNum = intval($_GET['id']);
+$idNum = isset($_GET['id']) ? $_GET['id'] : '';
 ?>
 <!DOCTYPE html>
 <html>
