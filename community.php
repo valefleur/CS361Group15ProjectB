@@ -65,7 +65,7 @@ $idNum = isset($_GET['id']) ? $_GET['id'] : '';
         </div>
       </div>
     </nav>
-  </div>
+    <div>
 <?php
 /* Retrieves Community location for Header*/
 if(!($statement = $mysqli->prepare("SELECT `Name`, `State`, `Country` FROM `Community` WHERE `CommunityID`= $idNum "))) {
@@ -82,6 +82,7 @@ while ($statement->fetch()) {
   echo "<h2>" . $name . "</h2>\n</div><div class='charInfo'><span>" . $state . "</span><p>" . $country . "</p></div>";
 }
 ?>
+    </div>
 
 <!-- Maybe put donate button up here and we can style it to be next to the name, state, country -->
 
