@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 'On');
 session_start();
-include 'storedInfo.php';
+// **** Dont think we need this, unless it is for sessions, or something - Corey - include 'storedInfo.php';
 
 // **** Let's come back and update the DB info here when we have it.
 // ****  There are 2 possible calls, depending on the db
