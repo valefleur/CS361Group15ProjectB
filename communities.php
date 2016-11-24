@@ -65,8 +65,8 @@ if($mysqli->connect_errno) {
       
       <h1>Opportunities</h1>
     </div>
-    <div class="rosterDiv">
-      <table border="1">
+    <div class="container">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>City</th>
