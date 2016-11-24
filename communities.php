@@ -56,6 +56,7 @@ if($mysqli->connect_errno) {
             //     echo "<li class='active'><a href='newaccount.php'><span class='glyphicon glyphicon-user'></span> Create Account</a></li>";
             //   }
               ?>
+              <li class='active'><a href='newaccount.php'><span class='glyphicon glyphicon-user'></span> Create Account</a></li>
             </ul>
           </div>
         </div>
