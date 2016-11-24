@@ -93,7 +93,7 @@ $statement->close();
  ?>
       </table>
     </div>
-<div>
+<div class="container">
   <form method="post" action="AddOpportunity.php">
   
     <fieldset>
