@@ -40,7 +40,7 @@ if($mysqli->connect_errno) {
           <div>
             <ul class="nav navbar-nav">
               <li><a href="index.php">I'll Go</a></li>
-              <li><a href="communities.php">Communities</a></li>
+              <li class="active"><a href="communities.php">Communities</a></li>
               <li><a href="something.php">Something</a></li>
               <li><a href="somethingelse.php">Something Else </a></li>
             </ul>
