@@ -41,6 +41,34 @@ class NewAccountTestCases(unittest.TestCase):
 		textbox.send_keys("Primary Name")
 		text = textbox.get_attribute("value")
 		self.assertIn("Primary Name", text)
+		
+class CommunitiesTestCases(unittest.TestCase):
+        """Testing communities.php page"""
+        @classmethod
+        def setUpClass(self):
+                self.firefox = webdriver.Firefox()
+                self.firefox.get(communitiesURL)
+
+        @classmethod
+        def tearDownClass(self):
+                time.sleep(5) #only so we can see what's happening
+                self.firefox.quit()
+
+
+        def test_communities_page_is_accessible(self):
+                """Is the communities page accessible?""" #this question gets printed on the console for easy reading
+                # Here is the SET UP code
+                WebDriverWait(self.firefox, 10).until(EC.title_contains("Opportunities"))
+                self.assertIn("Opportunities", self.firefox.title)
+
+        def test_city_is_editable(self):
+                """Can the city field be edited?"""
+                textbox = self.firefox.find_element_by_id("Name")  #misnomer for city variable in communities.php 
+                time.sleep(1) #only so we can see what's happening
+                textbox.send_keys("cityName")
+                text = textbox.get_attribute("value")
+                self.assertIn("cityName", text)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
