@@ -14,6 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 
 baseURL = "http://web.engr.oregonstate.edu/~bonneym/"
 newAccountURL = baseURL + "newaccount.php"
+communitiesURL = baseURL + "communities.php"
 
 class NewAccountTestCases(unittest.TestCase):
 	"""Testing NewAccount.php page"""
