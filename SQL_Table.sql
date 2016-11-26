@@ -43,6 +43,6 @@ CREATE TABLE `Account_Community` (
   `EndDate` DATE,
   PRIMARY KEY (`AccountID`, `CommunityID`, `SkillNeeded`),
   FOREIGN KEY (`AccountID`) REFERENCES `Account` (`AccountID`),
-  FOREIGN KEY (`CommunityID`) REFERENCES `Community` (`CommunityID`)
+  FOREIGN KEY (`CommunityID`) REFERENCES `Community` (`CommunityID`),
   FOREIGN KEY (`SkillNeeded`) REFERENCES `Community` (`SkillNeeded`)
 ) ENGINE=InnoDB;
