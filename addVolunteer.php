@@ -7,8 +7,8 @@ if($mysqli->connect_error){
 }
 
 $cid = $_POST['CommunityID'];
-$user = isset($_POST['AccountName']) ? $_POST['AccountName'] : '';
-$pass = isset($_POST['psw']) ? $_POST['psw'] : '';
+$user = $_POST['AccountName'];
+$pass = $_POST['psw'];
 
 if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass),?,?,?,?)"))){
     	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $_POST['startDate'] . "end: " . $_POST['endDate'];
