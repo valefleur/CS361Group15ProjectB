@@ -33,13 +33,13 @@ if($mysqli->connect_errno) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!--Do we have a JPG logo?
-          <a class="navbar-brand" href="index.php"><img src="images/logo.gif" width="75px" height="30px"></a>-->
+          <!--Do we have a JPG logo? href="index.php"-->
+          <a class="navbar-brand">I'll Go</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <div>
             <ul class="nav navbar-nav">
-              <li>I'll Go</li>
+<!--               <li>I'll Go</li> -->
               <li class="active"><a href="communities.php">Communities</a></li>
               <!--<li><a href="something.php">Something</a></li>
               <li><a href="somethingelse.php">Something Else </a></li>-->
