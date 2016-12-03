@@ -50,15 +50,16 @@ Fall 2016
             <span class="icon-bar"></span>
           </button>
           <!--Do we have a JPG logo?-->
-          <a class="navbar-brand" href="index.php"><img src="images/logo.gif" width="75px" height="30px"></a>
+<!--           <a class="navbar-brand" href="index.php"><img src="images/logo.gif" width="75px" height="30px"></a> -->
+		<a class="navbar-brand">I'll Go</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <div>
             <ul class="nav navbar-nav">
-              <li><a href="index.php">I'll Go</a></li>
+<!--               <li><a href="index.php">I'll Go</a></li> -->
               <li><a href="communities.php">Communities</a></li>
-              <li><a href="something.php">Something</a></li>
-              <li><a href="somethingelse.php">Something Else </a></li>
+<!--               <li><a href="something.php">Something</a></li>
+              <li><a href="somethingelse.php">Something Else </a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
             	<!--This is where we can to update Login/Logout features, profile page link, etc.-->
