@@ -68,6 +68,7 @@ $idNum = isset($_GET['id']) ? $_GET['id'] : '';
       </div>
     </nav>
     <!--  END NAV START BODY -->
+    <br><br>
     <div class="container">
         <div class="row">
           <div class="col-md-6">
