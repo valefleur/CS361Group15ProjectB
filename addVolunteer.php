@@ -6,7 +6,7 @@ if($mysqli->connect_error){
     echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
-$cid = 
+$cid = $_POST['CommunityID'];
 $user = isset($_POST['AccountName']) ? $_POST['AccountName'] : '';
 $pass = isset($_POST['psw']) ? $_POST['psw'] : '';
 
