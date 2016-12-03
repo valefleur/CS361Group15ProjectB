@@ -149,7 +149,7 @@ Fall 2016
       $("#submit").click(function(){
         var username = $("#inputUsername").val();
         var password = $("#inputPassword").val();
-        if (document.getElementById("#educator").checked = true) {
+        if (document.getElementById("#educator").checked == true) {
             var educator = $("#educator").val();
         }
         else {
