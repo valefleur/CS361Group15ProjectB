@@ -67,6 +67,7 @@ $idNum = isset($_GET['id']) ? $_GET['id'] : '';
         </div>
       </div>
     </nav>
+    <!--  END NAV START BODY -->
     <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -83,7 +84,7 @@ if(!($statement->bind_result($name, $state, $country))) {
 }
 /* Spacing will likely be off without some styling */
 while ($statement->fetch()) {
-  echo "<h2>" . $name . "</h2>\n</div><div class='charInfo'><span>" . $state . "</span><p>" . $country . "</p></div>";
+  echo "<h2>" . $name . "</h2>\n<div class='charInfo'><span>" . $state . "</span><p>" . $country . "</p></div>";
 }
 $statement->close();
 ?>
