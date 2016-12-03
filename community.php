@@ -174,22 +174,25 @@ while ($statement->fetch()) {
 ?>
       </table>
     </div>
+      </div>
     
 <!--         Sign up to volunteer time and training to a community            -->
 
-
+    <div class="container">
+      <div class="row">
     <form action="addVolunteer.php" method="post">
       <fieldset>
         <legend>Volunteer to Community</legend>
-        <p>
+          <div class='form-group'>
           Account Name: <input type="text" name="AccountName">
-        </p>
-        <p>
+        </div>
+        <div class='form-group'>
           Password: <input type="password" name="psw">
-        </p>
-        <span>
+        </div>
+        <div class='form-group'>
           Skill:
-        </span>
+        </div>
+        <div class='form-group'>
         <select name="CommunitySkill">
           <?php
           /* Populates Skill drop down*/
@@ -208,14 +211,15 @@ while ($statement->fetch()) {
           $statement->close();
            ?>
         </select>
-        <span>
+        </div>
+        <div class='form-group'>
          Start Date:
         <input type="date" name="startDate">
-        </span>
-        <span>
+        </div>
+        <div class='form-group'>
          End Date:
         <input type="date" name="endDate">
-        </span>
+        </div>
         <p>
           <input type="hidden" name="CommunityID" value="<?php echo $idNum; ?>">
           <input type="submit" name="submitVolunteer">
