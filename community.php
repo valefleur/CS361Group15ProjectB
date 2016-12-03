@@ -138,6 +138,7 @@ if(!($statement->bind_result($skill, $comment))) {
 while ($statement->fetch()) {
     echo "\n<tr>\n<td>" . $skill . "</td>\n<td>" . $comment . "</td>\n</tr>";
 }
+$statement->close();
 ?>
             </table>
         </div>
