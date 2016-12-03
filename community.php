@@ -159,7 +159,7 @@ $statement->close();
         </thead>
 <?php
 /* Retrieves existing Volunteers to display*/
-if(!($statement = $mysqli->prepare("SELECT `Account`.`FirstName`, `Account`.`LastName`, `Account_Community`.`Skill`, `StartDate`, `EndDate` FROM `Account` INNER JOIN `Account_Community` ON `Account`.`AccountID` = `Account_Community`.`AccountID` INNER JOIN `Community` ON `Account_Community`.`CommunityID` = `Community`.`CommunityID` WHERE `Account_Community`.`CommunityID`= idNum"))) {
+if(!($statement = $mysqli->prepare("SELECT `Account`.`FirstName`, `Account`.`LastName`, `Account_Community`.`Skill`, `StartDate`, `EndDate` FROM `Account` INNER JOIN `Account_Community` ON `Account`.`AccountID` = `Account_Community`.`AccountID` INNER JOIN `Community` ON `Account_Community`.`CommunityID` = `Community`.`CommunityID` WHERE `Account_Community`.`CommunityID`= $idNum"))) {
   echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 if(!($statement->execute())) {
