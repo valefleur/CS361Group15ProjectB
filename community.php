@@ -140,19 +140,81 @@ while ($statement->fetch()) {
             </table>
         </div>
     </div>
+    <h4>Existing Volunteers</h4>
+   <div class="existing_Volunteers">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Skill</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+        </thead>
+<?php
+/* Retrieves existing Volunteers to display*/
+if(!($statement = $mysqli->prepare("SELECT `Account`.`FirstName`, `Account`.`LastName`, `Account_Community`.`Skill`, `StartDate`, `EndDate` FROM `Account` INNER JOIN `Account_Community` ON `Account`.`AccountID` = `Account_Community`.`AccountID` INNER JOIN `Community` ON `Account_Community`.CommunityID` = `Community`.`CommunityID` WHERE `CommunityID`= $idNum "))) {
+  echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+if(!($statement->execute())) {
+  echo "Execute failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+if(!($statement->bind_result($firstName, $lastName. $skill, $startDate, $endDate))) {
+    echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+while ($statement->fetch()) {
+    echo "\n<tr>\n<td>" . $firstName . " " . $lastName . "</td>\n<td>" . $skill . "</td>\n<td>" . $startDate . "</td>\n<td>" . $endDate . "</td>\n</tr>";
+}
+?>
+      </table>
+    </div>
     
 <!--         Sign up to volunteer time and training to a community            -->
 
 
-
-    
-    
-    
-    
-    
-    
-    
-    
+    <form action="addVolunteer.php" method="post">
+      <fieldset>
+        <legend>Volunteer to Community</legend>
+        <p>
+          First Name: <input type="text" name="FirstName">
+        </p>
+        <p>
+          Last Name: <input type="text" name="LastName">
+        </p>
+        <span>
+          Skill:
+        </span>
+        <select name="AccountCommunity">
+          <?php
+          /* Populates Skill drop down*/
+          if(!($statement = $mysqli->prepare("SELECT `SkillNeeded` FROM `Community` WHERE `CommunityID`= $idNum "))) {
+            echo "Prepare failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+          }
+          if(!($statement->execute())) {
+            echo "Execute failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+          }
+          if(!($statement->bind_result($skill))) {
+            echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+          }
+          while ($statement->fetch()) {
+            echo '<option>' . $skill . '</option>';
+          }
+          $statement->close();
+           ?>
+        </select>
+        <span>
+         Start Date:
+        <input type="date" name="startDate">
+        </span>
+        <span>
+         End Date:
+        <input type="date" name="endDate">
+        </span>
+        <p>
+          <input type="submit" name="submitVolunteer">
+        </p>
+      </fieldset>
+    </form>
     
 
 <!--               Volunteer to community above               -->
