@@ -6,6 +6,7 @@ if($mysqli->connect_error){
     echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
+$cid = 
 $user = isset($_POST['AccountName']) ? $_POST['AccountName'] : '';
 $pass = isset($_POST['psw']) ? $_POST['psw'] : '';
 
@@ -19,8 +20,15 @@ if(!($stmt->bind_param("isss",$_POST['CommunityID'],$_POST['CommunitySkill'],$_P
 
 if(!$stmt->execute()){
    echo "Execute failed: "  . $stmt->errno . " " . $stmt->error;
-} else {
+} 
+else {
 	echo "Added volunteer to community.";    
 }
+
+$filePath = explode('/', $_SERVER['PHP_SELF'], -1);
+$filePath = implode('/', $filePath);
+$redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
+header("Location: {$redirect}/community.php?id=" . $cid, true);
+die();
     
 ?>
