@@ -164,7 +164,7 @@ if(!($statement = $mysqli->prepare("SELECT `Account`.`FirstName`, `Account`.`Las
 if(!($statement->execute())) {
   echo "Execute failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
-if(!($statement->bind_result($firstName, $lastName. $skill, $startDate, $endDate))) {
+if(!($statement->bind_result($firstName, $lastName, $skill, $startDate, $endDate))) {
     echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 while ($statement->fetch()) {
