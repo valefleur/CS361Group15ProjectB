@@ -11,10 +11,11 @@ $user = isset($_POST['AccountName']) ? $_POST['AccountName'] : '';
 $pass = isset($_POST['psw']) ? $_POST['psw'] : '';
 
 if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass),?,?,?,?)"))){
-    echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+    	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $_POST['startDate'] . "end: " . $_POST['endDate'];
+	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
-if(!($stmt->bind_param("isss",$_POST['CommunityID'],$_POST['CommunitySkill'],$_POST['startDate'],$_POST['endDate']))){
+if(!($stmt->bind_param("isss", $cid, $_POST['CommunitySkill'], $_POST['startDate'], $_POST['endDate']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
