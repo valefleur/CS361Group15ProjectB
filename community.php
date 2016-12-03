@@ -176,10 +176,10 @@ while ($statement->fetch()) {
       <fieldset>
         <legend>Volunteer to Community</legend>
         <p>
-          First Name: <input type="text" name="FirstName">
+          Account Name: <input type="text" name="AccountName">
         </p>
         <p>
-          Last Name: <input type="text" name="LastName">
+          Password: <input type="password" name="psw">
         </p>
         <span>
           Skill:
@@ -211,6 +211,7 @@ while ($statement->fetch()) {
         <input type="date" name="endDate">
         </span>
         <p>
+          <input type="hidden" name="CommunityID" value="<?php echo $idNum; ?>">
           <input type="submit" name="submitVolunteer">
         </p>
       </fieldset>
