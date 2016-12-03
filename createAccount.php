@@ -25,5 +25,11 @@ if(!$stmt->execute()) {
   echo "Execute failed.";
 }
 echo "Your new account was created!";
-mysqli_close($connectDB);
+// mysqli_close($connectDB);
+$filePath = explode('/', $_SERVER['PHP_SELF'], -1);
+$filePath = implode('/', $filePath);
+$redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
+header("Location: {$redirect}/communities.php", true);
+die();
+
 ?>
