@@ -23,5 +23,11 @@ if(!$stmt->execute()){
 } else {
 	echo "Added " . $stmt->affected_rows . " rows to Community.";    
 }
+
+$filePath = explode('/', $_SERVER['PHP_SELF'], -1);
+$filePath = implode('/', $filePath);
+$redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
+header("Location: {$redirect}/communities.php", true);
+die();
     
 ?>
