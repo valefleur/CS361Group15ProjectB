@@ -87,24 +87,24 @@ Fall 2016
         <h2 class="form-signin-heading">Create New Account</h2>
 
         <div class="form-group">
-          <label for="inputFirstname">First Name:</label>
-            <input type="text" name="inputFirstname" id="inputFirstname" class="form-control" placeholder="firstname" required autofocus>
+          <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" required autofocus>
             <span id="firstname_result"></span>
           </div>
         <div class="form-group">
-          <label for="inputLastname">Last Name:</label>
-            <input type="text" name="inputLastname" id="inputLastname" class="form-control" placeholder="lastname" required autofocus>
+          <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required autofocus>
             <span id="lastname_result"></span>
           </div>
 
         <div class="form-group">
           <label for="inputUsername">User Name:</label>
-            <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="username" required autofocus>
+            <input type="text" name="username" id="username" class="form-control" placeholder="username" required autofocus>
             <span id="username_result"></span>
           </div>
           <div class="form-group">
-            <label for="inputPassword">Password:  (Must be 6-18 characters)</label>
-            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="password" required>
+            <label for="password">Password:  (Must be 6-18 characters)</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
           </div>
           <div class="form-group">
             <label for="educator">Are you an Educator?:</label>
