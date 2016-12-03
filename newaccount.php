@@ -81,7 +81,7 @@ Fall 2016
 	
 	<!--****  THIS IS WHERE WE CORRECT THE FORM ****-->
     <div class="container">
-      <form method="post" class="form-signin" id="createAcc">
+      <form method="post" action="createAccount.php" class="form-signin" id="createAcc">
         <span id="create_results"></span>
         <h2 class="form-signin-heading">Create New Account</h2>
 
@@ -145,41 +145,41 @@ Fall 2016
     });
 
     /*  This function submits the account creation via an AJAX request  */
-    $(document).ready(function(){
-      $("#submit").click(function(){
-        var username = $("#inputUsername").val();
-        var password = $("#inputPassword").val();
-        if (document.getElementById("#educator").checked == true) {
-            var educator = $("#educator").val();
-        }
-        else {
-            var educator = 0;
-        }
-        var firstName = $("#inputFirstname").val();
-        var lastName = $("#inputLastname").val();
-//         if (educator < 0 || educator > 1){
+//     $(document).ready(function(){
+//       $("#submit").click(function(){
+//         var username = $("#inputUsername").val();
+//         var password = $("#inputPassword").val();
+//         if (document.getElementById("#educator").checked == true) {
+//             var educator = $("#educator").val();
+//         }
+//         else {
+//             var educator = 0;
+//         }
+//         var firstName = $("#inputFirstname").val();
+//         var lastName = $("#inputLastname").val();
+// //         if (educator < 0 || educator > 1){
             
-//         } //error
+// //         } //error
 
-        var postString = 'username='+ username + '&password='+ password + '&educator=' + educator + '&firstName=' + firstName + '&lastName=' + lastName;
-        if(username == '' || password == '' || firstName == '' || lastName == '') {
-          alert("All Fields are Required");
-        }
-        else {
-          $.ajax({
-            type: "POST",
-            url: "createAccount.php",
-            data: postString,
-            cache: false,
-            success: function(result){
-              alert(result);
-              $('#createAcc')[0].reset();
-            }
-          });
-        }
-        return false;
-      });
-    });
+//         var postString = 'username='+ username + '&password='+ password + '&educator=' + educator + '&firstName=' + firstName + '&lastName=' + lastName;
+//         if(username == '' || password == '' || firstName == '' || lastName == '') {
+//           alert("All Fields are Required");
+//         }
+//         else {
+//           $.ajax({
+//             type: "POST",
+//             url: "createAccount.php",
+//             data: postString,
+//             cache: false,
+//             success: function(result){
+//               alert(result);
+//               $('#createAcc')[0].reset();
+//             }
+//           });
+//         }
+//         return false;
+//       });
+//     });
     /*
     function toggleDisabled(_checked) {
       document.getElementById('inputFirstname').disabled = _checked ? true : false;
