@@ -38,11 +38,11 @@ DROP TABLE IF EXISTS `Account_Community`;
 CREATE TABLE `Account_Community` (
   `AccountID` int(11) NOT NULL,
   `CommunityID` int(11) NOT NULL,
-  `Skill` varchar(255) NOT NULL,
+  `SkillID` int(11) NOT NULL,
   `StartDate` DATE NOT NULL,
   `EndDate` DATE NOT NULL,
   PRIMARY KEY (`AccountID`, `CommunityID`),
   FOREIGN KEY (`AccountID`) REFERENCES `Account` (`AccountID`),
   FOREIGN KEY (`CommunityID`) REFERENCES `Community` (`CommunityID`),
-  FOREIGN KEY (`Skill`) REFERENCES `Community` (`SkillNeeded`)
+  FOREIGN KEY (`SkillID`) REFERENCES `Community` (`SkillNeeded`)
 ) ENGINE=InnoDB;
