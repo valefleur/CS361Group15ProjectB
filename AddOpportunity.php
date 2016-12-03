@@ -20,8 +20,6 @@ if(!($stmt->bind_param("sssss",$_POST['Name'],$_POST['State'],$_POST['Country'],
 
 if(!$stmt->execute()){
    echo "Execute failed: "  . $stmt->errno . " " . $stmt->error;
-} else {
-	echo "Added " . $stmt->affected_rows . " rows to Community.";    
 }
 
 $filePath = explode('/', $_SERVER['PHP_SELF'], -1);
