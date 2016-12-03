@@ -174,14 +174,14 @@ while ($statement->fetch()) {
       <fieldset>
         <legend>Volunteer to Community</legend>
           <div class='form-group'>
-          Account Name: <input type="text" name="AccountName">
+          Account Name: <input type="text" name="AccountName" id="AccountName">
         </div>
         <div class='form-group'>
-          Password: <input type="password" name="psw">
+          Password: <input type="password" name="psw" id="psw">
         </div>
         <div class='form-group'>
           Skill:
-        <select name="CommunitySkill">
+        <select name="CommunitySkill" id ="CommunitySkill">
           <?php
           /* Populates Skill drop down*/
           if(!($statement = $mysqli->prepare("SELECT `SkillNeeded` FROM `Community` WHERE `CommunityID`= $idNum "))) {
@@ -194,7 +194,7 @@ while ($statement->fetch()) {
             echo "Bind failed " . $mysqli->connect_errno . " " . $mysqli->connect_error;
           }
           while ($statement->fetch()) {
-            echo '<option>' . $skill . '</option>';
+            echo '<option value="' . $skill . '">' . $skill . '</option>';
           }
           $statement->close();
            ?>
@@ -202,14 +202,14 @@ while ($statement->fetch()) {
         </div>
         <div class='form-group'>
          Start Date:
-        <input type="date" name="startDate">
+        <input type="date" name="startDate" id="startDate">
         </div>
         <div class='form-group'>
          End Date:
-        <input type="date" name="endDate">
+        <input type="date" name="endDate" id="endDate">
         </div>
         <p>
-          <input type="hidden" name="CommunityID" value="<?php echo $idNum; ?>">
+          <input type="hidden" name="CommunityID" id ="CommunityID" value="<?php echo $idNum; ?>">
           <input type="submit" name="submitVolunteer">
         </p>
       </fieldset>
