@@ -24,6 +24,6 @@ if(!$stmt->bind_param("ssiss", $un, $pw, $ed, $fn, $ln)) {
 if(!$stmt->execute()) {
   echo "Execute failed.";
 }
-echo "Your new account was created. Click the Login button to Login.";
+echo "Your new account was created!";
 mysqli_close($connectDB);
 ?>
