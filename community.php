@@ -83,6 +83,7 @@ if(!($statement->bind_result($name, $state, $country))) {
 while ($statement->fetch()) {
   echo "<h2>" . $name . "</h2>\n</div><div class='charInfo'><span>" . $state . "</span><p>" . $country . "</p></div>";
 }
+$statement->close();
 ?>
         </div>
     </div>
@@ -168,6 +169,7 @@ if(!($statement->bind_result($firstName, $lastName. $skill, $startDate, $endDate
 while ($statement->fetch()) {
     echo "\n<tr>\n<td>" . $firstName . " " . $lastName . "</td>\n<td>" . $skill . "</td>\n<td>" . $startDate . "</td>\n<td>" . $endDate . "</td>\n</tr>";
 }
+ $statement->close();
 ?>
       </table>
     </div>
