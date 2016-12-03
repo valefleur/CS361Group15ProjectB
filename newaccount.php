@@ -149,18 +149,17 @@ Fall 2016
       $("#submit").click(function(){
         var username = $("#inputUsername").val();
         var password = $("#inputPassword").val();
-        if document.getElementById("#educator").checked = true {
+        if (document.getElementById("#educator").checked = true) {
             var educator = $("#educator").val();
         }
         else {
             var educator = 0;
         }
         var firstName = $("#inputFirstname").val();
-        var lastName = $("#inputLastname"
-).val();
-        if (educator < 0 || educator > 1){
+        var lastName = $("#inputLastname").val();
+//         if (educator < 0 || educator > 1){
             
-        } //error
+//         } //error
 
         var postString = 'username='+ username + '&password='+ password + '&educator=' + educator + '&firstName=' + firstName + '&lastName=' + lastName;
         if(username == '' || password == '' || firstName == '' || lastName = '') {
