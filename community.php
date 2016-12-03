@@ -43,7 +43,7 @@ $idNum = isset($_GET['id']) ? $_GET['id'] : '';
         <div id="navbar" class="navbar-collapse collapse">
           <div>
             <ul class="nav navbar-nav">
-              <li><a href="index.php">I'll Go</a></li>
+              <li>I'll Go</li>
               <li><a href="communities.php">Communities</a></li>
               <!--
               <li><a href="something.php">Something</a></li>
