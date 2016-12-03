@@ -140,6 +140,8 @@ while ($statement->fetch()) {
             </table>
         </div>
     </div>
+    <div class="container">
+      <div class="row">
     <h4>Existing Volunteers</h4>
    <div class="existing_Volunteers">
       <table border="1">
@@ -216,6 +218,8 @@ while ($statement->fetch()) {
         </p>
       </fieldset>
     </form>
+      </div>
+    </div>
     
 
 <!--               Volunteer to community above               -->
