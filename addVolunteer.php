@@ -15,7 +15,7 @@ $rawdate2 = htmlentities($_POST['endDate']);
 $date2 = date('Y-m-d', strtotime($rawdate2));
 
 if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass),?,?,?,?)"))){
-    	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $date1 . "end: " . $date2;
+    	echo "cid: " . $cid . ", user: " . $user . ", pass: " . $pass . ", skill: " . $_POST['CommunitySkill'] . ", start: " .  $date1 . ", end: " . $date2;
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
