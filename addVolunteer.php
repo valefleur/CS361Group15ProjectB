@@ -9,13 +9,17 @@ if($mysqli->connect_error){
 $cid = $_POST['CommunityID'];
 $user = $_POST['AccountName'];
 $pass = $_POST['psw'];
+$rawdate1 = htmlentities($_POST['startDate']);
+$date1 = date('Y-m-d', strtotime($rawdate1));
+$rawdate2 = htmlentities($_POST['endDate']);
+$date2 = date('Y-m-d', strtotime($rawdate2));
 
 if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass),?,?,?,?)"))){
-    	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $_POST['startDate'] . "end: " . $_POST['endDate'];
+    	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $date1 . "end: " . $date2;
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
-if(!($stmt->bind_param("isss", $cid, $_POST['CommunitySkill'], $_POST['startDate'], $_POST['endDate']))){
+if(!($stmt->bind_param("isss", $cid, $_POST['CommunitySkill'], $date1, $date2))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
