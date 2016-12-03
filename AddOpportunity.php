@@ -12,7 +12,7 @@ if($mysqli->connect_error){
 if(!($stmt = $mysqli->prepare("INSERT INTO Community(Name, State, Country, SkillNeeded, UserComments) VALUES (?,?,?,?,?)"))){
     echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
-print_r($_POST); 
+//print_r($_POST); 
 
 if(!($stmt->bind_param("sssss",$_POST['Name'],$_POST['State'],$_POST['Country'],$_POST['Skill'],$_POST['Comment']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
