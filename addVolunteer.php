@@ -10,12 +10,24 @@ $cid = $_POST['CommunityID'];
 $user = $_POST['AccountName'];
 $pass = $_POST['psw'];
 
-if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass),?,?,?,?)"))){
-    	echo "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $_POST['startDate'] . "end: " . $_POST['endDate'];
+//  Statement to get account ID
+if(!($stmt = $mysqli->prepare(SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass))){
+	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+}
+if(!$stmt->execute()){
+	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+if(!$stmt->bind_result($aid)){
+	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+$stmt->close();
+
+if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES (?,?,?,?,?)"))){
+    	echo "aid: " . $aid . "cid: " . $cid . "user: " . $user . "pass: " . $pass . "skill: " . $_POST['CommunitySkill'] . "start: " .  $_POST['startDate'] . "end: " . $_POST['endDate'];
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
-if(!($stmt->bind_param("isss", $cid, $_POST['CommunitySkill'], $_POST['startDate'], $_POST['endDate']))){
+if(!($stmt->bind_param("iisss", $aid, $cid, $_POST['CommunitySkill'], $_POST['startDate'], $_POST['endDate']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
