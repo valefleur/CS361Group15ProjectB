@@ -6,10 +6,10 @@ if($mysqli->connect_error){
     echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
-$user = isset($_POST['AccountName']) ? $_GET['AccountName'] : '';
+$user = isset($_POST['AccountName']) ? $_POST['AccountName'] : '';
 $pass = isset($_POST['psw']) ? $_POST['psw'] : '';
 
-if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE (`UserName` = $user AND `Password` = $psw)),?,?,?,?)"))){
+if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES ((SELECT `AccountID` FROM `Account` WHERE (`UserName` = $user AND `Password` = $pass)),?,?,?,?)"))){
     echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 
