@@ -180,6 +180,7 @@ while ($statement->fetch()) {
 
     <div class="container">
       <div class="row">
+        <div class="col-md-6">
     <form action="addVolunteer.php" method="post">
       <fieldset>
         <legend>Volunteer to Community</legend>
@@ -228,6 +229,7 @@ while ($statement->fetch()) {
     </form>
       </div>
     </div>
+      </div>
     
 
 <!--               Volunteer to community above               -->
