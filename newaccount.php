@@ -162,7 +162,7 @@ Fall 2016
 //         } //error
 
         var postString = 'username='+ username + '&password='+ password + '&educator=' + educator + '&firstName=' + firstName + '&lastName=' + lastName;
-        if(username == '' || password == '' || firstName == '' || lastName = '') {
+        if(username == '' || password == '' || firstName == '' || lastName == '') {
           alert("All Fields are Required");
         }
         else {
