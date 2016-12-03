@@ -1,5 +1,5 @@
 <?php
-include 'storedInfo.php';
+// include 'storedInfo.php';
 // Group 15
 // Oregon State University
 // CS 361
@@ -25,11 +25,11 @@ if(!$stmt->execute()) {
   echo "Execute failed.";
 }
 echo "Your new account was created!";
-// mysqli_close($connectDB);
-$filePath = explode('/', $_SERVER['PHP_SELF'], -1);
-$filePath = implode('/', $filePath);
-$redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
-header("Location: {$redirect}/communities.php", true);
-die();
+mysqli_close($connectDB);
+// $filePath = explode('/', $_SERVER['PHP_SELF'], -1);
+// $filePath = implode('/', $filePath);
+// $redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
+// header("Location: {$redirect}/communities.php", true);
+// die();
 
 ?>
