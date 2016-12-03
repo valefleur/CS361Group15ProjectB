@@ -162,7 +162,7 @@ while ($statement->fetch()) {
 ?>
       </table>
     </div>
-    
+    <hr>
 <!--         Sign up to volunteer time and training to a community            -->
 
     <div class="container">
