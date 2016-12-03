@@ -24,9 +24,7 @@ if(!$stmt->bind_param("ssiss", $un, $pw, $ed, $fn, $ln)) {
 if(!$stmt->execute()) {
   echo "Execute failed.";
 }
-else {
-  echo "Your new account was created!";
-}
+
 // mysqli_close($connectDB);
 $filePath = explode('/', $_SERVER['PHP_SELF'], -1);
 $filePath = implode('/', $filePath);
