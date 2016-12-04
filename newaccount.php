@@ -98,7 +98,7 @@ Fall 2016
           </div>
 
         <div class="form-group">
-          <label for="inputUsername">User Name:</label>
+          <label for="username">User Name:</label>
             <input type="text" name="username" id="username" class="form-control" placeholder="username" required autofocus>
             <span id="username_result"></span>
           </div>
@@ -138,7 +138,7 @@ Fall 2016
 
     /* This Function queries the Account table to verify that the username is available */
     /* It is triggered while the user types in a username, it checks after each character is input */
-    $("#inputUsername").keyup(function(event) {
+    $("#username").keyup(function(event) {
        var username = $(this).val();
        $.post('check_username.php', {'username':username, 'type':'create'}, function(data) {
        $("#username_result").html(data); // check_username.php result
