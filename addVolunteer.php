@@ -1,5 +1,6 @@
 <?php
-ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 $mysqli = new mysqli("oniddb.cws.oregonstate.edu","bonneym-db", "R2lzWpqYli7k9Qk8", "bonneym-db");
 
 if($mysqli->connect_error){
@@ -27,7 +28,6 @@ echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error
 if(!$stmt->bind_result($aid)){
 echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
-$stmt->close();
 
 
 if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES (?,?,?,?,?)"))){
