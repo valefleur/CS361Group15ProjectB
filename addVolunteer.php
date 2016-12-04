@@ -19,7 +19,7 @@ $date2 = date('Y-m-d', strtotime($rawdate2));
 
 
 
-if(!($stmt = $mysqli->prepare(SELECT `AccountID` FROM `Account` WHERE `UserName` = $user AND `Password` = $pass))){
+if(!($stmt = $mysqli->prepare(SELECT AccountID FROM Account WHERE UserName = $user AND Password = $pass))){
 echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 if(!$stmt->execute()){
@@ -30,7 +30,7 @@ echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
 
 
-if(!($stmt = $mysqli->prepare("INSERT INTO `Account_Community`(`AccountID`, `CommunityID`, `Skill`, `StartDate`, `EndDate`) VALUES (?,?,?,?,?)"))){
+if(!($stmt = $mysqli->prepare("INSERT INTO Account_Community(AccountID, CommunityID, Skill, StartDate, EndDate) VALUES (?,?,?,?,?)"))){
     	echo "cid: " . $cid . ", user: " . $user . ", pass: " . $pass . ", skill: " . $_POST['CommunitySkill'] . ", start: " .  $date1 . ", end: " . $date2;
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
