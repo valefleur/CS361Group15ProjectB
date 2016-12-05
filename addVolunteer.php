@@ -41,9 +41,7 @@ if(!($stmt->bind_param("iisss", $aid, $cid, $_POST['CommunitySkill'], $date1, $d
 if(!$stmt->execute()){
 	echo "Execute failed: "  . $stmt->errno . " " . $stmt->error;
 } 
-else {
-	echo "Added volunteer to community.";    
-}
+
 $filePath = explode('/', $_SERVER['PHP_SELF'], -1);
 $filePath = implode('/', $filePath);
 $redirect = "http://" . $_SERVER['HTTP_HOST'] . $filePath;
