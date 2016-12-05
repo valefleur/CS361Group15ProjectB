@@ -12,6 +12,7 @@ $rawdate1 = htmlentities($_POST['startDate']);
 $date1 = date('Y-m-d', strtotime($rawdate1));
 $rawdate2 = htmlentities($_POST['endDate']);
 $date2 = date('Y-m-d', strtotime($rawdate2));
+
 if(!($stmt = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user' AND Password = '$pass'"))){
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
@@ -21,8 +22,9 @@ if(!$stmt->execute()){
 if(!$stmt->bind_result($aid)){
 	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 }
+
 if(!($stmt = $mysqli->prepare("INSERT INTO Account_Community(AccountID, CommunityID, Skill, StartDate, EndDate) VALUES (?,?,?,?,?)"))){
-    	echo "cid: " . $cid . ", user: " . $user . ", pass: " . $pass . ", skill: " . $_POST['CommunitySkill'] . ", start: " .  $date1 . ", end: " . $date2;
+    	echo "aid: " . $aid . ", cid: " . $cid . ", user: " . $user . ", pass: " . $pass . ", skill: " . $_POST['CommunitySkill'] . ", start: " .  $date1 . ", end: " . $date2;
 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 }
 if(!($stmt->bind_param("iisss", $aid, $cid, $_POST['CommunitySkill'], $date1, $date2))){
