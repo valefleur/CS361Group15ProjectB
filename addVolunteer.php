@@ -13,7 +13,8 @@ $date1 = date('Y-m-d', strtotime($rawdate1));
 $rawdate2 = htmlentities($_POST['endDate']);
 $date2 = date('Y-m-d', strtotime($rawdate2));
 
-$result = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user' AND Password = '$pass'")
+$result = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user'")
+// 	 AND Password = '$pass'
 
 $result->execute();
 $result->bind_result($aid);
