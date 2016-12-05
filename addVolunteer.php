@@ -13,15 +13,22 @@ $date1 = date('Y-m-d', strtotime($rawdate1));
 $rawdate2 = htmlentities($_POST['endDate']);
 $date2 = date('Y-m-d', strtotime($rawdate2));
 
-if(!($stmt = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user' AND Password = '$pass'"))){
-	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
-}
-if(!$stmt->execute()){
-	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
-}
-if(!$stmt->bind_result($aid)){
-	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
-}
+$result = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user' AND Password = '$pass'")
+
+$result->execute();
+$result->bind_result($aid);
+$result->store_result();
+$result->fetch();
+
+// if(!($stmt = $mysqli->prepare("SELECT AccountID FROM Account WHERE UserName = '$user' AND Password = '$pass'"))){
+// 	echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+// }
+// if(!$stmt->execute()){
+// 	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+// }
+// if(!$stmt->bind_result($aid)){
+// 	echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+// }
 
 if(!($stmt = $mysqli->prepare("INSERT INTO Account_Community(AccountID, CommunityID, Skill, StartDate, EndDate) VALUES (?,?,?,?,?)"))){
     	echo "aid: " . $aid . ", cid: " . $cid . ", user: " . $user . ", pass: " . $pass . ", skill: " . $_POST['CommunitySkill'] . ", start: " .  $date1 . ", end: " . $date2;
